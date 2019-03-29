@@ -2,12 +2,13 @@ include ../layout
     div.row
         div.col-md-4.col-md-offset-4
             h1 Sign up
-            form(action="", method="post")
+            form(action="/signup", method="post")
                 div.form-group
                     label(for="email") E-mail
-                    imput.form-control(type="text", id="email", name="email")
+                    input.form-control(type="text", id="email", name="email")
                 div.form-group
                     label(for="password") Password
-                    imput.form-control(type="password", id="password", name="password")
-                input(type="hidden", name="_crsf", value=token)
-                #{token}
+                    input.form-control(type="password", id="password", name="password")
+                input(type="hidden", name="_csrf", value=token)
+                button.btn.btn-secondary(type="submit") Sign up
+            p #{token}

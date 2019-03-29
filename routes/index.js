@@ -1,8 +1,9 @@
 var express = require('express');
-var router = express.Router();
 var csrf = require('csurf');
+var passport = require('passport');
+var router = express.Router();
 
-var protection = csrf();
+var protection = csrf({cookie: false});
 router.use(protection);
 
 router.get('/', function(req, res, next) {
@@ -13,8 +14,14 @@ router.get('/cart', function(req, res, next) {
   res.render('cart', { title: 'Possibly Socks - Cart' });
 });
   
-router.get('/sign-up', function(req, res, next) {
-  res.render('account/signup', { token: req.csrfToken });
+router.get('/signup', function(req, res, next) {
+  res.render('account/signup', { token: req.csrfToken() });
 });
+  
+router.post('/signup', passport.authenticate('local.signup', {
+  successRedirect: '/',
+  failureRedirect: '/signup',
+  failureFlash: true
+}));
 
 module.exports = router;
