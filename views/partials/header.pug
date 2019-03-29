@@ -1,0 +1,29 @@
+nav.navbar.fixed-top.navbar-expand-sm.navbar-light.bg-light(style="border-bottom: 1px solid #818589")
+    a.navbar-brand(href="/") Possibly Socks
+
+    button.navbar-toggler(type="button", data-target="#menu", data-toggle="collapse", aria-expanded="false", aria-controls="menu", aria-label="Menu")
+        span.navbar-toggler-icon
+
+    div#menu.collapse.navbar-collapse
+        div.navbar-nav.ml-auto
+            a.nav-link(href="/category/all") Shop
+            a.nav-link(href="/brands/all") Brands
+            a.nav-link(href="/cart") Cart
+            a.nav-link(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Sign in
+            
+            div.dropdown-menu.dropdown-menu-right(aria-labelledby="navbar-dropdown")
+                form.px-4.py-3
+                    div.form-group
+                        label(for='dropdown-email') Email
+                        input#dropdown-email.form-control(type='email', placeholder='email@example.com')
+
+                    div.form-group
+                        label(for='dropdown-pass') Password
+                        input#dropdown-pass.form-control(type='password', placeholder='password')
+
+                    button.btn.btn-primary(type='submit') Sign in
+
+                    div.dropdown-divider
+
+                    a.dropdown-item(href='/sign-up') Sign up
+                    a.dropdown-item(href='#') Forgot password?

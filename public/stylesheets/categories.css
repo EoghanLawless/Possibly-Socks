@@ -1,0 +1,55 @@
+.title-section {
+    border-bottom: 1px solid #818589;
+}
+.title-image {
+    height: 22em;
+    overflow: hidden;
+
+    filter: opacity(50%);
+}
+.page-title {
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+
+    font-weight: 300;
+
+    transform: translate(-50%, -50%);
+}
+.page-description {
+    position: absolute;
+    text-align: center;
+    top: 32%;
+    left: 50%;
+
+    font-weight: 300;
+
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.card-body {
+    padding: 20px 5px 0 5px;
+}
+
+.product-title {
+    font-weight: 300;
+}
+
+.thumbnail {
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #818589;
+
+    transition: 0.3s;
+}
+.card:hover .thumbnail {
+    border: 1px solid #212529;
+
+    filter: opacity(80%);
+}

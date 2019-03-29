@@ -1,0 +1,77 @@
+body {
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+}
+
+
+.carousel {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #818589;
+}
+.carousel-caption {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: #212529;
+
+    bottom: 3rem;
+    z-index: 10;
+}
+.carousel-button {
+    border-color: #212529;
+}
+.carousel-item {
+    height: 32rem;
+}
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+}
+.carousel-image {
+    overflow: hidden;
+
+    filter: opacity(70%);
+
+    transition: 0.8s;
+}
+.carousel:hover .carousel-image {
+    filter: opacity(40%);
+}
+
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: 400;
+}
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+
+.brand-image {
+    width: 140px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #818589;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+.brand-image:hover {
+    border-radius: 45%;
+}
+
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+}
+  
