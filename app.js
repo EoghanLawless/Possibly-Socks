@@ -13,9 +13,9 @@ var validator = require('express-validator');
 
 var index = require('./routes/index');
 var account = require('./routes/account');
-var brands = require('./routes/brands');
-var categories = require('./routes/categories');
-var products = require('./routes/products');
+var brand = require('./routes/brand');
+var category = require('./routes/category');
+var product = require('./routes/product');
 
 var app = express();
 
@@ -55,9 +55,9 @@ app.use(function(req, res, next) {
 });
 
 app.use('/account', account);
-app.use('/brands', brands);
-app.use('/category', categories);
-app.use('/product', products);
+app.use('/brands', brand);
+app.use('/category', category);
+app.use('/product', product);
 app.use('/', index);
 
 

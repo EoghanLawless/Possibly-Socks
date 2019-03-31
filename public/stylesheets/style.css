@@ -14,3 +14,7 @@ body {
     text-align: right;
     font-weight: 400;
 }
+
+.nav-link {
+    margin-left: 2em;
+}

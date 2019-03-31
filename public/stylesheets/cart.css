@@ -1,0 +1,17 @@
+.product-title {
+    font-size: 1.2em;
+}
+
+.product-price {
+    float: right;
+    text-align: right;
+    font-size: 1.2em;
+}
+
+.product-quantity {
+    font-size: 1.2em;
+}
+
+.add-remove-btns {
+    font-family: monospace;
+}

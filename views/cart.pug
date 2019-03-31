@@ -1,3 +1,41 @@
 extends layout
 
 block content
+
+    link(rel='stylesheet', href='/stylesheets/cart.css')
+
+    div.content
+        div.row
+            div.col-md-6.mx-auto
+                if products
+                    ul.list-group
+                        li.list-group-item.list-group-item-dark
+                            div.row
+                                div.col-md-6
+                                    span.product-title Product
+                                
+                                div.col-md-3.d-flex.justify-content-between
+                                    span.product-quantity Quantity
+
+                                div.col-md-3
+                                    span.product-price Price
+                        each product in products
+                            li.list-group-item
+                                div.row
+                                    div.col-md-6.product-title
+                                        span #{product.product.title}
+                                    
+                                    div.col-md-3.d-flex.justify-content-between
+                                        div.btn-group.add-remove-btns
+                                            a.btn.btn-sm.btn-outline-danger -
+                                            a.btn.btn-sm.btn-outline-success +
+                                        strong.product-quantity #{product.quantity}
+
+                                    div.col-md-3.product-price
+                                        strong.text-muted € #{product.price}
+                else 
+                    ul.list-group
+                        li.list-group-item
+                            span.product-title There are no items in your cart.
+
+
