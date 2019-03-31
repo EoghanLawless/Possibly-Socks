@@ -33,6 +33,17 @@ block content
 
                                     div.col-md-3.product-price
                                         strong.text-muted € #{product.price}
+                                        
+                        li.list-group-item.list-group-item-light
+                            div.row
+                                div.col-md-6.product-title
+                                    span Total
+
+                                div.col-md-6.product-price
+                                    strong.text-muted € #{total}
+                    div.row(style="margin-top: 1em;")
+                        div.col-md-3.ml-auto
+                            button.btn.btn-block.btn-success Checkout
                 else 
                     ul.list-group
                         li.list-group-item
