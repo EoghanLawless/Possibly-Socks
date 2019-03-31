@@ -9,21 +9,25 @@ nav.navbar.fixed-top.navbar-expand-sm.navbar-light.bg-light(style="border-bottom
             a.nav-link(href="/category/all") Shop
             a.nav-link(href="/brands/all") Brands
             a.nav-link(href="/cart") Cart
-            a.nav-link(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Sign in
-            
-            div.dropdown-menu.dropdown-menu-right(aria-labelledby="navbar-dropdown")
-                form.px-4.py-3
-                    div.form-group
-                        label(for='dropdown-email') Email
-                        input#dropdown-email.form-control(type='email', placeholder='email@example.com')
 
-                    div.form-group
-                        label(for='dropdown-pass') Password
-                        input#dropdown-pass.form-control(type='password', placeholder='password')
+            if loggedIn
+                a.nav-link(href="/account/logout") Log out
+            else
+                a.nav-link(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Sign in
+                
+                div.dropdown-menu.dropdown-menu-right(aria-labelledby="navbar-dropdown")
+                    form.px-4.py-3(action="/account/signin", method="post")
+                        div.form-group
+                            label(for='email') E-mail
+                            input#email.form-control(type='email', name='email', placeholder='email@example.com')
 
-                    button.btn.btn-primary(type='submit') Sign in
+                        div.form-group
+                            label(for='password') Password
+                            input#password.form-control(type='password' name='password', placeholder='password')
 
-                    div.dropdown-divider
+                        input(type="hidden", name="_csrf", value=token)
+                        button.btn.btn-block.btn-primary(type='submit') Sign in
 
-                    a.dropdown-item(href='/signup') Sign up
-                    a.dropdown-item(href='#') Forgot password?
+                        div.dropdown-divider
+
+                        button.btn.btn-block.btn-outline-primary(type='submit', formaction="/account/signup") Sign up
