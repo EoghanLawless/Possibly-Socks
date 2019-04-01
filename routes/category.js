@@ -32,6 +32,7 @@ router.get('/:category', function(req, res, next) {
     var products = [];
     docs.forEach(function(product) {
       if(product.category === category) {
+        console.log(product);
         products.push(product);
       }
     });
