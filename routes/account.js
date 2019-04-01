@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
+
 router.get('/signup', loggedOut, function(req, res, next) {
   var messages = req.flash('error');
 
@@ -11,11 +12,10 @@ router.get('/signup', loggedOut, function(req, res, next) {
   }
 });
 router.post('/signup', passport.authenticate('local.signup', {
-  successRedirect: '/',
+  successRedirect: 'back',
   failureRedirect: '/account/signup',
   failureFlash: true
 }));
-
   
 router.get('/signin', loggedOut, function(req, res, next) {
   var messages = req.flash('error');
@@ -26,7 +26,7 @@ router.get('/signin', loggedOut, function(req, res, next) {
   }
 });
 router.post('/signin', passport.authenticate('local.signin', {
-  successRedirect: '/',
+  successRedirect: 'back',
   failureRedirect: '/account/signin',
   failureFlash: true
 }));

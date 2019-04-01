@@ -48,6 +48,7 @@ block content
       each brand in brands
       
         div.col-lg-4
-          img.brand-image(src=brand.thumbnail)
+          a(href="/brand/" + brand.name)
+            img.brand-image(src=brand.thumbnail)
           h2 #{brand.name}
           p #{brand.short_description}

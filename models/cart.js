@@ -32,6 +32,21 @@ module.exports = function Cart(Cart) {
         this.value += cartItem.product.price;
     };
 
+    this.remove = function(product, id) {
+        var cartItem = this.products[id];
+
+        if(cartItem) {
+            if(cartItem.quantity - 1 === 0) {
+                delete this.products[id];
+            } else {
+                cartItem = this.products[id] = { product: product, quantity: (cartItem.quantity - 1), price: (cartItem.price - cartItem.product.price) };
+            }
+            
+            this.quantity--;
+            this.value -= cartItem.product.price;
+        }
+    };
+
     this.list = function() {
         var array = [];
 

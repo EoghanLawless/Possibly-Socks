@@ -1,9 +1,8 @@
 var express = require('express');
-var Brand = require('../models/brand');
-var Cart = require('../models/cart');
 var router = express.Router();
 
-
+var Cart = require('../models/cart');
+var Brand = require('../models/brand');
 
 
 router.get('/', function(req, res, next) {

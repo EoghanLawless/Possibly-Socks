@@ -14,11 +14,12 @@ block content
                                 div.col-md-6
                                     span.product-title Product
                                 
-                                div.col-md-3.d-flex.justify-content-between
+                                div.col-md-3.text-center
                                     span.product-quantity Quantity
 
                                 div.col-md-3
                                     span.product-price Price
+
                         each product in products
                             li.list-group-item
                                 div.row
@@ -27,8 +28,8 @@ block content
                                     
                                     div.col-md-3.d-flex.justify-content-between
                                         div.btn-group.add-remove-btns
-                                            a.btn.btn-sm.btn-outline-danger -
-                                            a.btn.btn-sm.btn-outline-success +
+                                            a.btn.btn-sm.btn-outline-danger(href="/product/removefromcart/" + product.product._id) -
+                                            a.btn.btn-sm.btn-outline-success(href="/product/addtocart/" + product.product._id) +
                                         strong.product-quantity #{product.quantity}
 
                                     div.col-md-3.product-price

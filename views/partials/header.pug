@@ -6,11 +6,12 @@ nav.navbar.fixed-top.navbar-expand-sm.navbar-light.bg-light(style="border-bottom
 
     div#menu.collapse.navbar-collapse
         div.navbar-nav.ml-auto
-            a.nav-link(href="/category") Shop
+            a.nav-link(href="/category") Categories
             a.nav-link(href="/brand") Brands
 
-            if session.cart
-                a.nav-link(href="/cart") Cart (#{session.cart.quantity})
+            if session
+                if session.cart
+                    a.nav-link(href="/cart") Cart (#{session.cart.quantity})
 
             if loggedIn
                 a.nav-link(href="/account/logout") Log out

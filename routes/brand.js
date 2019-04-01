@@ -4,12 +4,12 @@ var router = express.Router();
 var Brand = require('../models/brand');
 var Product = require('../models/product');
 
+
 router.get('/', function(req, res, next) {
   Brand.find(function(err, docs) {
     res.render('brands', { title: 'Brands', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', brands: docs });
   });
 });
-
 
 router.get('/:brand', function(req, res, next) {
   var brand = req.params.brand;

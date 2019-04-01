@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    div.container
+        div.row.path
+            div.col-12.d-flex
+                h4.text-muted >&nbsp;
+                a(href="/category/" + product.category)
+                    h4.text-muted #{product.category}
+                h4.text-muted &nbsp;/&nbsp;
+                a(href="/product/" + product.title)
+                    h4.text-muted #{product.title}
+
+        div.row.product-details
+            div.col-lg-4.col-md-4.col-sm-12.col-xs-12
+                img.thumbnail.card-img-top(src=product.thumbnail alt='thumbnail')
+                
+            div.col-lg-4.col-md-4.col-sm-12.col-xs-12
+                h3.product-title #{product.title}
+                br
+                
+                small.text-muted Summary
+                p.text-dark.product-description #{product.short_description}
+
+                small.text-muted Brand
+                a(href="/brand/" + product.brand)
+                    p.text-dark #{product.brand}
+
+                small.text-muted Category
+                a(href="/category/" + product.category)
+                    p.text-dark #{product.category}
+
+            div.col-lg-4.col-md-4.col-sm-12.col-xs-12
+                h2.price-tag.text-muted € #{product.price}
+                br
+                a.btn.btn-sm.btn-outline-success(href="/product/addtocart/" + product._id, role='button') Add to cart
+        div.row.product-description
+            div.col-12
+                p.text-muted Description
+                p.text-dark #{product.long_description}

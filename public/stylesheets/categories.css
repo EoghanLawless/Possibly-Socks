@@ -54,7 +54,6 @@
 
 .thumbnail {
     margin: auto;
-    /* border-radius: 10px; */
     padding: 4px;
     border: 1px solid #c8c8c8;
 
@@ -62,6 +61,9 @@
 }
 .card:hover .thumbnail {
     border: 1px solid #818589;
+}
 
-    /* filter: opacity(80%); */
+.product-tags {
+    padding-bottom: 1em;
+    text-align: right;
 }
