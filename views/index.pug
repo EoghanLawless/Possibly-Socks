@@ -25,7 +25,7 @@ block content
           div.carousel-caption.text-left
             h1 Happy Socks.
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus scelerisque eleifend donec pretium.
-            a.carousel-button.btn.btn-lg.btn-default(href='#' role='button') Learn more
+            a.carousel-button.btn.btn-lg.btn-default(href='#' role='button') View more
 
       div.carousel-item
         img.carousel-image(src="/images/sitting_socks_cropped.jpg")
@@ -44,23 +44,10 @@ block content
 
   div.container.marketing
     div.row
-      div.col-lg-4
-        img.brand-image(src="/images/possibly_socks.jpg")
 
-        h2 Possibly Socks
-        p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
-        a.btn.btn-secondary(href='#' role='button') View more &raquo;
-        
-      div.col-lg-4
-        img.brand-image(src="/images/happy_socks.jpg")
-
-        h2 Happy Socks
-        p Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-        a.btn.btn-secondary(href='#' role='button') View more &raquo;
-        
-      div.col-lg-4
-        img.brand-image(src="/images/scott_nichol_socks_square.jpg")
-
-        h2 Scott-Nichol
-        p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-        a.btn.btn-secondary(href='#' role='button') View more &raquo;
+      each brand in brands
+      
+        div.col-lg-4
+          img.brand-image(src=brand.thumbnail)
+          h2 #{brand.name}
+          p #{brand.short_description}

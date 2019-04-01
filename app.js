@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/account', account);
-app.use('/brands', brand);
+app.use('/brand', brand);
 app.use('/category', category);
 app.use('/product', product);
 app.use('/', index);

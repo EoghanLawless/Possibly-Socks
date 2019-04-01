@@ -29,30 +29,39 @@
     transform: translate(-50%, -50%);
 }
 
-.container .col-lg-4 {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-.container h2 {
-    font-weight: 400;
-}
-.container .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
+.container {
+    height: 100%;
 }
 
-
-.brand-image {
-    width: 140px;
-    padding: 5px;
-    border-radius: 50%;
-    border: 1px solid #818589;
-    overflow: hidden;
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 0 #c8c8c8;
 
     transition: 0.3s;
 }
-.brand-image:hover {
-    border-radius: 45%;
+.card:hover {
+    box-shadow: 0 5px 10px #c8c8c8;
 }
-  
+.card-body {
+    padding: 20px 5px 0 5px;
+}
+
+.product-title {
+    font-weight: 300;
+}
+
+.thumbnail {
+    margin: auto;
+    /* border-radius: 10px; */
+    padding: 4px;
+    border: 1px solid #c8c8c8;
+
+    transition: 0.3s;
+}
+.card:hover .thumbnail {
+    border: 1px solid #818589;
+
+    /* filter: opacity(80%); */
+}

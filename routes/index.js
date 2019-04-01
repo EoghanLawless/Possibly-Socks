@@ -1,10 +1,15 @@
 var express = require('express');
+var Brand = require('../models/brand');
 var Cart = require('../models/cart');
 var router = express.Router();
 
 
+
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Possibly Socks' });
+  Brand.find(function(err, docs) {
+    res.render('index', { title: 'Possibly Socks', brands: docs });
+  });
 });
   
 router.get('/cart', function(req, res, next) {
