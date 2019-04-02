@@ -2,8 +2,18 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
-var Account = require('../models/account')
+var Cart = require('../models/cart');
+var Order = require('../models/order');
 
+router.get('/orders', loggedIn, function(req, res, next) {
+    
+    Order.find({account: req.user}, function(err, orders) {
+        orders.forEach(function(order) {
+            order.items = new Cart(order.cart).list();
+        });
+        res.render('orders', { title: 'My orders', orders: orders });
+    });
+});
 
 router.get('/signup', loggedOut, function(req, res, next) {
     var messages = req.flash('error');

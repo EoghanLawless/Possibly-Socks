@@ -14,6 +14,7 @@ nav.navbar.fixed-top.navbar-expand-sm.navbar-light.bg-light(style="border-bottom
                     a.nav-link(href="/cart") Cart (#{session.cart.quantity})
 
             if loggedIn
+                a.nav-link(href="/account/orders") Orders
                 a.nav-link(href="/account/logout") Log out
             else
                 a.nav-link(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Sign in

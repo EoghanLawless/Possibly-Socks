@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+    link(rel='stylesheet', href='/stylesheets/orders.css')
+
+    div.content
+        div.row
+            div.col-md-6.col-sm-10.mx-auto
+
+                h2.title #{title}
+
+                each order in orders
+
+                    ul.list-group
+                        li.list-group-item
+                            ul.list-group
+
+                                each product in order.items
+
+                                    li.list-group-item
+                                        div.row
+                                            div.col-md-6.product-title
+                                                span #{product.product.title}
+                                            
+                                            div.col-md-3.mx-auto
+                                                strong.product-quantity #{product.quantity}
+
+                                            div.col-md-3.product-price
+                                                strong.text-muted € #{product.price}
+                                        
+                        li.list-group-item.list-group-item-dark.mb-5
+                            div.row
+                                div.col-md-6.product-title
+                                    span Total
+
+                                div.col-md-6.product-price
+                                    strong.text-muted € #{order.cart.value}
