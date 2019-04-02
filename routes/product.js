@@ -46,8 +46,14 @@ router.get('/removefromcart/:id', function(req, res, next) {
     }
 
     cart.remove(product, product.id);
-    req.session.cart = cart;
-    res.redirect('back');
+
+    if(cart.quantity === 0) {
+      delete req.session.cart;
+      res.redirect('/');
+    } else {
+      req.session.cart = cart;
+      res.redirect('back');
+    }
   })
 });
 

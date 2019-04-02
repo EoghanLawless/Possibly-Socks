@@ -43,8 +43,16 @@ block content
                                 div.col-md-6.product-price
                                     strong.text-muted € #{total}
                     div.row(style="margin-top: 1em;")
-                        div.col-md-3.ml-auto
-                            a.btn.btn-block.btn-success(href="/checkout") Checkout
+                        div.col-12.content
+                            div.input-group.mb-3
+                                div.input-group-prepend
+                                    span#first-name.input-group-text First name
+                                input.form-control(type="text", aria-label="First name", aria-describedby="first-name")
+                            div.input-group.mb-3
+                                div.input-group-prepend
+                                    span#last-name.input-group-text Last name
+                                input.form-control(type="text", aria-label="Last name", aria-describedby="last-name")
+                        
                 else 
                     ul.list-group
                         li.list-group-item
