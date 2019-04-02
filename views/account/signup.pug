@@ -6,16 +6,33 @@ include ../layout
             h1.title Sign up
             form(action="/account/signup", method="post")
                 div.form-group
-                    label(for="email") E-mail
-                    input#email.form-control(type="text", name="email")
+                    label(for="email") E-mail *
+                    input#email.form-control(type="text", name="email", placeholder='email@example.com')
+
                 div.form-group
-                    label(for="password") Password
-                    input#password.form-control(type="password", name="password")
+                    label(for="password") Password *
+                    input#password.form-control(type="password", name="password", placeholder='password')
+
+                dv.d-flex
+                    div.form-group.pr-1
+                        label(for="first_name") First name
+                        input#first_name.form-control(type="text", name="first_name", placeholder='John')
+                    div.form-group.pl-1
+                        label(for="last_name") Last name
+                        input#last_name.form-control(type="text", name="last_name", placeholder='Smith')
+
+                div.form-group
+                    label(for="address") Address
+                    input#address.form-control(type="text", name="address", placeholder='63 Fawn Lane Noblesville, IN 46060')
+                
+                div
+                    small.text-muted * required fields
 
                 if error
                     div.alert.alert-danger 
                         each message in messages
                             p #{message}
 
-                input(type="hidden", name="_csrf", value=token)
-                button.btn.btn-secondary(type="submit") Sign up
+                div.pt-2
+                    input(type="hidden", name="_csrf", value=token)
+                    button.btn.btn-secondary(type="submit") Sign up

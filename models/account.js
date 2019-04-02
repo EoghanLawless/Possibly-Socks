@@ -4,7 +4,11 @@ var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 var schema = new Schema({
     email: {type: String, required: true},
-    password: {type: String, required: true}
+    password: {type: String, required: true},
+
+    first_name: {type: String, required: false},
+    last_name: {type: String, required: false},
+    address: {type: String, required: false}
 });
 
 schema.methods.encryptPassword = function(password) {

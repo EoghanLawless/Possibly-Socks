@@ -2,19 +2,17 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
+var Account = require('../models/account')
+
 
 router.get('/signup', loggedOut, function(req, res, next) {
   var messages = req.flash('error');
-
-  var error = messages.length > 0;
-  if(error) {
-    res.render('account/signup', { messages: messages, error: error });
-  }
+  res.render('account/signup', { messages: messages, error: messages.length > 0 });
 });
 router.post('/signup', passport.authenticate('local.signup', {
-  successRedirect: 'back',
-  failureRedirect: '/account/signup',
-  failureFlash: true
+    successRedirect: 'back',
+    failureRedirect: '/account/signup',
+    failureFlash: true
 }));
   
 router.get('/signin', loggedOut, function(req, res, next) {

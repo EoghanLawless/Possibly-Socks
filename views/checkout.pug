@@ -44,14 +44,22 @@ block content
                                     strong.text-muted € #{total}
                     div.row(style="margin-top: 1em;")
                         div.col-12.content
-                            div.input-group.mb-3
-                                div.input-group-prepend
-                                    span#first-name.input-group-text First name
-                                input.form-control(type="text", aria-label="First name", aria-describedby="first-name")
-                            div.input-group.mb-3
-                                div.input-group-prepend
-                                    span#last-name.input-group-text Last name
-                                input.form-control(type="text", aria-label="Last name", aria-describedby="last-name")
+
+                            dv.d-flex.justify-content-between
+                                div.form-group
+                                    label(for="first_name") First name
+                                    input#first_name.form-control(type="text", name="first_name", placeholder='John', value=account.first_name)
+                                div.form-group
+                                    label(for="last_name") Last name
+                                    input#last_name.form-control(type="text", name="last_name", placeholder='Smith', value=account.last_name)
+
+                            div.form-group
+                                label(for="address") Address
+                                input#address.form-control(type="text", name="address", placeholder='63 Fawn Lane Noblesville, IN 46060', value=account.address)
+
+                            div.form-group
+                                label(for="address") Address
+                                input#address.form-control(type="text", name="address", placeholder='63 Fawn Lane Noblesville, IN 46060', value=account.address)
                         
                 else 
                     ul.list-group

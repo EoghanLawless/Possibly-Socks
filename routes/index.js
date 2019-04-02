@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var Account = require('../models/account');
 var Cart = require('../models/cart');
 var Brand = require('../models/brand');
 
@@ -26,7 +27,9 @@ router.get('/checkout', function(req, res, next) {
   }
 
   var cart = new Cart(req.session.cart);
-  res.render('checkout', { title: 'Checkout', cart: cart.list(), total: cart.value });
+  console.log(req.user);
+  console.log(req.account);
+  res.render('checkout', { title: 'Checkout', cart: cart.list(), total: cart.value, account: req.user });
 });
 
 module.exports = router;
