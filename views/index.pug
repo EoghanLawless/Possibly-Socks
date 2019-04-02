@@ -12,7 +12,7 @@ block content
 
     div.carousel-inner.bg-light
       div.carousel-item.active
-        img.carousel-image(src="/images/businessmen_socks_cropped.jpg")
+        img.carousel-image(src="/images/beach_socks_cropped.jpg")
         div.container
           div.carousel-caption.text-left
             h1 Possibly Socks.
@@ -20,7 +20,7 @@ block content
             a.carousel-button.btn.btn-lg.btn-default(href='#' role='button') Shop now
 
       div.carousel-item
-        img.carousel-image(src="/images/beach_socks_cropped.jpg")
+        img.carousel-image(src="/images/businessmen_socks_cropped.jpg")
         div.container
           div.carousel-caption.text-left
             h1 Happy Socks.
@@ -41,6 +41,13 @@ block content
     a.carousel-control-next(href='#carousel' role='button' data-slide='next')
       span.carousel-control-next-icon(aria-hidden='true')
       
+  div.row
+    div.col-6.mx-auto
+      if success
+        div#success.alert.alert-success
+          span #{success}
+      else
+        div#success.alert.alert-success.d-none
 
   div.container.marketing
     div.row

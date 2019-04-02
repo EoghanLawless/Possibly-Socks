@@ -2,21 +2,23 @@ extends layout
 
 block content
 
-  link(rel='stylesheet', href='/stylesheets/brands.css')
-  
+  link(rel='stylesheet', href='/stylesheets/categories.css')
+
   div.title-section.text-center
     img.title-image(src="/images/white_fabric.jpg")
     h1.page-title #{title}
     p.page-description.lead.text-muted #{description}
-  
-  div.container
-    div.row
 
-      each brand in brands
+  div.album.py-5.bg-light
+    div.container
+      div.row
 
-        div.col-lg-4
-          img.brand-image(src=brand.thumbnail)
-          h2 #{brand.name}
-          p #{brand.short_description}
-          a.btn.btn-block.btn-outline-secondary(href='/brand/' + brand.name role='button') View more
-          
+        each brand in brands
+
+          div.col-lg-3.col-md-4.col-sm-6.col-xs-12
+            div.card.lg-3.box-shadow
+              img.thumbnail.card-img-top(src=brand.thumbnail alt='thumbnail')
+              div.card-body
+                h3.category-title #{brand.name}
+                p.category-description.card-text #{brand.short_description}
+                a.btn.btn-block.btn-outline-secondary(href="/brand/" + brand.name, role='button') View socks

@@ -48,7 +48,7 @@ app.use(protection);
 
 // pass crsf token
 app.use(function(req, res, next) {
-  res.locals.token = req.csrfToken();
+  res.locals.csrfToken = req.csrfToken();
   res.locals.loggedIn = req.isAuthenticated();
   res.locals.session = req.session;
   next();

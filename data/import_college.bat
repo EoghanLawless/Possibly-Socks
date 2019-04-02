@@ -1,1 +1,1 @@
-cmd /k C:\nodejs\installs\mongodb-win32-x86_64-2008plus-ssl-4.0.3\bin\mongoimport.exe --host localhost:27017 --db socks --collection products --type csv --headerline --file .\products.csv
+cmd /k C:\nodejs\installs\mongodb-win32-x86_64-2008plus-ssl-4.0.3\bin\mongoimport.exe --host localhost:27017 --db socks --collection categories --type csv --headerline --file .\categories.csv

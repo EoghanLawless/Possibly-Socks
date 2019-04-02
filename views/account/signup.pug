@@ -13,7 +13,7 @@ include ../layout
                     label(for="password") Password *
                     input#password.form-control(type="password", name="password", placeholder='password')
 
-                dv.d-flex
+                dv.d-flex.justify-content-between
                     div.form-group.pr-1
                         label(for="first_name") First name
                         input#first_name.form-control(type="text", name="first_name", placeholder='John')
@@ -33,6 +33,6 @@ include ../layout
                         each message in messages
                             p #{message}
 
-                div.pt-2
-                    input(type="hidden", name="_csrf", value=token)
-                    button.btn.btn-secondary(type="submit") Sign up
+                div.d-flex.justify-content-end.pt-2
+                    input(type="hidden", name="_csrf", value=csrfToken)
+                    button.btn.btn-primary(type="submit") Sign up

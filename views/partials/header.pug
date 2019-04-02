@@ -28,10 +28,10 @@ nav.navbar.fixed-top.navbar-expand-sm.navbar-light.bg-light(style="border-bottom
                             label(for='password') Password
                             input#password.form-control(type='password' name='password', placeholder='password')
 
-                        input(type="hidden", name="_csrf", value=token)
+                        input(type="hidden", name="_csrf", value=csrfToken)
                         button.btn.btn-block.btn-primary(type='submit') Sign in
 
                         div.dropdown-divider
 
                         a(href="/account/signup")
-                            button.btn.btn-block.btn-outline-primary Sign up
+                            button.btn.btn-block.btn-outline-primary(type="button") Sign up

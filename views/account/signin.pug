@@ -17,5 +17,8 @@ include ../layout
                         each message in messages
                             p #{message}
 
-                input(type="hidden", name="_csrf", value=token)
-                button.btn.btn-secondary(type="submit") Sign in
+                div.d-flex.justify-content-between.pt-2
+                    a(href="/account/signup")
+                        button.btn.btn-outline-secondary(type="button") Sign up
+                    input(type="hidden", name="_csrf", value=csrfToken)
+                    button.btn.btn-primary(type="submit") Sign in

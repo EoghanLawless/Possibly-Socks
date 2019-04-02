@@ -6,8 +6,8 @@ var Account = require('../models/account')
 
 
 router.get('/signup', loggedOut, function(req, res, next) {
-  var messages = req.flash('error');
-  res.render('account/signup', { messages: messages, error: messages.length > 0 });
+    var messages = req.flash('error');
+    res.render('account/signup', { messages: messages, error: messages.length > 0 });
 });
 router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: 'back',
@@ -16,17 +16,14 @@ router.post('/signup', passport.authenticate('local.signup', {
 }));
   
 router.get('/signin', loggedOut, function(req, res, next) {
-  var messages = req.flash('error');
+    var messages = req.flash('error');
 
-  var error = messages.length > 0;
-  if(error) {
-    res.render('account/signin', { messages: messages, error: error });
-  }
+    res.render('account/signin', { messages: messages, error: messages.length > 0 });
 });
 router.post('/signin', passport.authenticate('local.signin', {
-  successRedirect: 'back',
-  failureRedirect: '/account/signin',
-  failureFlash: true
+    successRedirect: 'back',
+    failureRedirect: '/account/signin',
+    failureFlash: true
 }));
 
 router.get('/logout', loggedIn, function(req, res, next) {

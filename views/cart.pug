@@ -44,7 +44,12 @@ block content
                                     strong.text-muted € #{total}
                     div.row(style="margin-top: 1em;")
                         div.col-md-3.ml-auto
-                            a.btn.btn-block.btn-success(href="/checkout") Checkout
+                            if loggedIn
+                                a(href="/checkout") 
+                                    button.btn.btn-block.btn-success(type="button") Checkout
+                            else
+                                a(href="/account/signin")
+                                    button.btn.btn-block.btn-outline-primary(type="button", method="get") Sign in
                 else 
                     ul.list-group
                         li.list-group-item

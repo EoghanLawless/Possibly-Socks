@@ -42,26 +42,73 @@ block content
 
                                 div.col-md-6.product-price
                                     strong.text-muted € #{total}
-                    div.row(style="margin-top: 1em;")
-                        div.col-12.content
+                    
+                    div.row
+                        div.col-8.mx-auto.content
+                            if error
+                                div#payment-errors.alert.alert-danger
+                                    span #{error}
+                            else
+                                div#payment-errors.alert.alert-danger.d-none
 
-                            dv.d-flex.justify-content-between
+                            form#checkout(action="/checkout", method="post")
+                                if account
+                                    dv.d-flex.justify-content-between
+                                        div.form-group
+                                            label(for="first-name") First name
+                                            input#first-name.form-control(type="text", required name="firstname", value=account.first_name)
+                                        div.form-group
+                                            label(for="last-name") Last name
+                                            input#last-name.form-control(type="text", required name="lastname", value=account.last_name)
+
+                                    div.form-group
+                                        label(for="address") Address
+                                        input#address.form-control(type="text", required name="address", value=account.address)
+
+                                    div.form-group
+                                        label(for="card-holder") Card holder name
+                                        input#card-holder.form-control(type="text", required name="cardholder", value=account.first_name + " " + account.last_name)
+                        
+                                else
+                                    dv.d-flex.justify-content-between
+                                        div.form-group
+                                            label(for="first-name") First name
+                                            input#first-name.form-control(type="text", required name="firstname", placeholder='John')
+                                        div.form-group
+                                            label(for="last-name") Last name
+                                            input#last-name.form-control(type="text", required name="lastname", placeholder='Smith')
+
+                                    div.form-group
+                                        label(for="address") Address
+                                        input#address.form-control(type="text", required name="address", placeholder='63 Fawn Lane Noblesville, IN 46060')
+
+                                    div.form-group
+                                        label(for="card-holder") Card holder name
+                                        input#card-holder.form-control(type="text", required name="cardholder", placeholder='John Smith')
+
                                 div.form-group
-                                    label(for="first_name") First name
-                                    input#first_name.form-control(type="text", name="first_name", placeholder='John', value=account.first_name)
-                                div.form-group
-                                    label(for="last_name") Last name
-                                    input#last_name.form-control(type="text", name="last_name", placeholder='Smith', value=account.last_name)
+                                    label(for="card-number") Card number
+                                    input#card-number.form-control(type="text", name="cardnumber", placeholder='4242424242424242')
 
-                            div.form-group
-                                label(for="address") Address
-                                input#address.form-control(type="text", name="address", placeholder='63 Fawn Lane Noblesville, IN 46060', value=account.address)
-
-                            div.form-group
-                                label(for="address") Address
-                                input#address.form-control(type="text", name="address", placeholder='63 Fawn Lane Noblesville, IN 46060', value=account.address)
+                                dv.d-flex.justify-content-between
+                                    div.form-group.mr-2
+                                        label(for="card-expiration-month") Expiration month
+                                        input#card-expiration-month.form-control(type="text", name="card-expiration-month", placeholder='01')
+                                    div.form-group.ml-2.mr-2
+                                        label(for="card-expiration-year") Expiration year
+                                        input#card-expiration-year.form-control(type="text", name="card-expiration-year", placeholder='2022')
+                                    div.form-group.ml-2
+                                        label(for="card-cvc") CVC
+                                        input#card-cvc.form-control(type="text", name="card-cvc", placeholder='123')
+                                
+                                div.col-6.mx-auto.mt-2.mb-5
+                                    input(type="hidden", name="_csrf", value=csrfToken)
+                                    button.btn.btn-block.btn-success(type="submit") Checkout
                         
                 else 
                     ul.list-group
                         li.list-group-item
                             span.product-title There are no items in your cart.
+
+    script(type="text/javascript", src="https://js.stripe.com/v2/")
+    script(type="text/javascript", src="javascripts/checkout.js")
