@@ -7,7 +7,7 @@ var Product = require('../models/product');
 
 router.get('/', function(req, res, next) {
   Category.find(function(err, docs) {
-    res.render('categories', { title: 'Categories', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', categories: docs });
+    res.render('categories', { title: 'Categories', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', categories: docs });
   });
 });
 

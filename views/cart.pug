@@ -6,44 +6,44 @@ block content
 
     div.content
         div.row
-            div.col-md-6.col-sm-10.mx-auto
+            div.col-10.col-md-6.mx-auto
                 if cart
                     ul.list-group
                         li.list-group-item.list-group-item-dark
                             div.row
-                                div.col-md-6
+                                div.col-6
                                     span.product-title Product
                                 
-                                div.col-md-3.text-center
+                                div.col-3.text-center
                                     span.product-quantity Quantity
 
-                                div.col-md-3
+                                div.col-3
                                     span.product-price Price
 
                         each product in cart
                             li.list-group-item
                                 div.row
-                                    div.col-md-6.product-title
-                                        span #{product.product.title}
+                                    div.col-6
+                                        span.product-title #{product.product.title}
                                     
-                                    div.col-md-3.d-flex.justify-content-between
+                                    div.col-3.d-flex.justify-content-between
                                         div.btn-group.add-remove-btns
                                             a.btn.btn-sm.btn-outline-danger(href="/product/removefromcart/" + product.product._id) -
                                             a.btn.btn-sm.btn-outline-success(href="/product/addtocart/" + product.product._id) +
                                         strong.product-quantity #{product.quantity}
 
-                                    div.col-md-3.product-price
-                                        strong.text-muted € #{product.price}
+                                    div.col-3
+                                        strong.product-price.text-muted € #{product.price}
                                         
                         li.list-group-item.list-group-item-light
                             div.row
-                                div.col-md-6.product-title
-                                    span Total
+                                div.col-6
+                                    span.product-title Total
 
-                                div.col-md-6.product-price
-                                    strong.text-muted € #{total}
+                                div.col-6
+                                    strong.product-price.text-muted € #{total}
                     div.row(style="margin-top: 1em;")
-                        div.col-md-3.ml-auto
+                        div.col-4.ml-auto
                             if loggedIn
                                 a(href="/checkout") 
                                     button.btn.btn-block.btn-success(type="button") Checkout

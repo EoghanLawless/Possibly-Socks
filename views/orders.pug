@@ -6,7 +6,7 @@ block content
 
     div.content
         div.row
-            div.col-md-6.col-sm-10.mx-auto
+            div.col-10.col-md-6.mx-auto
 
                 h2.title #{title}
 
@@ -20,19 +20,19 @@ block content
 
                                     li.list-group-item
                                         div.row
-                                            div.col-md-6.product-title
-                                                span #{product.product.title}
+                                            div.col-6
+                                                span.product-title #{product.product.title}
                                             
-                                            div.col-md-3.mx-auto
+                                            div.col-3.mx-auto
                                                 strong.product-quantity #{product.quantity}
 
-                                            div.col-md-3.product-price
-                                                strong.text-muted € #{product.price}
+                                            div.col-3
+                                                strong.product-price.text-muted € #{product.price}
                                         
                         li.list-group-item.list-group-item-dark.mb-5
                             div.row
-                                div.col-md-6.product-title
-                                    span Total
+                                div.col-6
+                                    span.product-title Total
 
-                                div.col-md-6.product-price
-                                    strong.text-muted € #{order.cart.value}
+                                div.col-6
+                                    strong.product-price.text-muted € #{order.cart.value}

@@ -1,3 +1,7 @@
+* {
+    font-size: 14pt;
+}
+
 body {
     margin-top: 3.5em;
 }
@@ -23,23 +27,73 @@ body {
     margin-left: 2em;
 }
 
+
+@media (max-width: 768px) {
+    body {
+        margin-top: 4.5em !important;
+    }
+    
+    .navbar {
+        min-height: 80px;
+    }
+    
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        height: 80px;
+        line-height: 70px !important;
+        font-size: 1.5em !important;
+    }
+    
+    .nav-link {
+        margin-left: 0;
+        font-size: 1.3em;
+    }
+
+    .navbar-toggle {
+        /* (80px - button height 34px) / 2 = 23px */
+        margin-top: 23px;
+        padding: 9px 10px !important;
+    }
+
+    .product-title {
+        font-size: 1.6em !important;
+    }
+    .product-quantity {
+        font-size: 1.6em !important;
+    }
+    .product-price {
+        font-size: 1.6em !important;
+    }
+
+    .brand-name {
+        font-size: 2.4em;
+    }
+    .description {
+        font-size: 1.2em;
+    }
+    .brand-image {
+        width: 200px !important;
+    }
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #CCCCCC !important;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #CCCCCC !important;
-   opacity:  1;
+    color:    #CCCCCC !important;
+    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #CCCCCC !important;
-   opacity:  1;
+    color:    #CCCCCC !important;
+    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #CCCCCC !important;
+    color:    #CCCCCC !important;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #CCCCCC !important;
+    color:    #CCCCCC !important;
 }
 ::placeholder { /* Most modern browsers support this now. */
-   color:    #CCCCCC !important;
+    color:    #CCCCCC !important;
 }
