@@ -11,7 +11,7 @@ router.get('/orders', loggedIn, function(req, res, next) {
         orders.forEach(function(order) {
             order.items = new Cart(order.cart).list();
         });
-        res.render('orders', { title: 'My orders', orders: orders });
+        res.render('orders', { title: 'My orders', orders: orders, ordered: orders.length > 0 });
     });
 });
 

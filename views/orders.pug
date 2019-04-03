@@ -10,29 +10,35 @@ block content
 
                 h2.title #{title}
 
-                each order in orders
+                if ordered
 
+                    each order in orders
+
+                        ul.list-group
+                            li.list-group-item
+                                ul.list-group
+
+                                    each product in order.items
+
+                                        li.list-group-item
+                                            div.row
+                                                div.col-6
+                                                    span.product-title #{product.product.title}
+                                                
+                                                div.col-3.mx-auto
+                                                    strong.product-quantity #{product.quantity}
+
+                                                div.col-3
+                                                    strong.product-price.text-muted € #{product.price}
+                                            
+                            li.list-group-item.list-group-item-dark.mb-5
+                                div.row
+                                    div.col-6
+                                        span.product-title Total
+
+                                    div.col-6
+                                        strong.product-price.text-muted € #{order.cart.value}
+                else
                     ul.list-group
                         li.list-group-item
-                            ul.list-group
-
-                                each product in order.items
-
-                                    li.list-group-item
-                                        div.row
-                                            div.col-6
-                                                span.product-title #{product.product.title}
-                                            
-                                            div.col-3.mx-auto
-                                                strong.product-quantity #{product.quantity}
-
-                                            div.col-3
-                                                strong.product-price.text-muted € #{product.price}
-                                        
-                        li.list-group-item.list-group-item-dark.mb-5
-                            div.row
-                                div.col-6
-                                    span.product-title Total
-
-                                div.col-6
-                                    strong.product-price.text-muted € #{order.cart.value}
+                            span.product-title You have not ordered anything yet.
